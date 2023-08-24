@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Concepts</title>
+</head>
+<body>
+
+<h1>JavaScript Demonstrations</h1>
+
+
+<h3>String Methods:</h3>
+<p id="stringDemo"></p>
+
+
+<h3>Number Methods:</h3>
+<p id="numberDemo"></p>
+
+
+<h3>Array Methods:</h3>
+<p id="arrayDemo"></p>
+
+
+<h3>Date Methods:</h3>
+<p id="dateDemo"></p>
+
+
+<h3>Function  Methods:</h3>
+<input type="text" id="nameInput" placeholder="Enter your name">
+<button onclick="demoFunction()">Greet Me</button>
+<p id="functionDemo"></p>
+
+<script>
+    //  String 
+    let str = "Hello, world!";
+    let strDemo = "Original String: " + str;
+    strDemo += "<br>Uppercase: " + str.toUpperCase();
+    strDemo += "<br>Character at index 7: " + str.charAt(7);
+    strDemo += "<br>String includes 'world': " + str.includes("world");
+    strDemo += "<br>Index of 'world': " + str.indexOf("world");
+    strDemo += "<br>Replace 'world' with 'everyone': " + str.replace("world", "everyone");
+    document.getElementById("stringDemo").innerHTML = strDemo;
+
+    // Number 
+    let num = 12131.4156;
+    let numDemo = "Original Number: " + num;
+    numDemo += "<br>Fixed to 2 decimals: " + num.toFixed(2);
+    numDemo += "<br>Convert to string: " + num.toString();
+    numDemo += "<br>Round the number: " + Math.round(num);
+    numDemo += "<br>Number's exponential notation: " + num.toExponential();
+    document.getElementById("numberDemo").innerHTML = numDemo;
+
+    //  Array 
+    let arr = [1, "apple", 3, "orange"];
+    let arrDemo = "Original Array: " + arr;
+    arrDemo += "<br>Joined Array: " + arr.join(", ");
+    arrDemo += "<br>Length of Array: " + arr.length;
+    arr.push("banana");
+    arrDemo += "<br>After push: " + arr;
+    arr.pop();
+    arrDemo += "<br>After pop: " + arr;
+    document.getElementById("arrayDemo").innerHTML = arrDemo;
+
+    //   Date 
+    let date = new Date();
+    let dateDemo = "Today's Date is: " + date;
+    dateDemo += "<br>Year is: " + date.getFullYear();
+    dateDemo += "<br>Month is: " + (date.getMonth() + 1);
+    dateDemo += "<br>Day of the week is : " + date.getDay();
+    dateDemo += "<br>Hour is: " + date.getHours();
+    document.getElementById("dateDemo").innerHTML = dateDemo;
+
+    // Function 
+    function greet(name) {
+        return "Hello, " + name + "!";
+    }
+
+    function demoFunction() {
+    
+        var name = document.getElementById("nameInput").value;
+        if(name) {
+            document.getElementById("functionDemo").innerHTML = greet(name);
+        } else {
+            document.getElementById("functionDemo").innerHTML = "Please enter your name!";
+        }
+       
+    }
+</script>
+
+</body>
+</html>
